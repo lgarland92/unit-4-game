@@ -1,0 +1,27 @@
+body {
+    background-color: lightgoldenrodyellow;
+    color: darkcyan;
+    font-family: 'Dancing Script', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48pt;
+}
+
+.pic {
+    height: 300px;
+    width: 300px;  
+}
+
+p {
+    font-size: 24pt;
+}
+
+.frame {
+    background-color: lightblue;
+}
+
+#score {
+    text-align: center;
+}
