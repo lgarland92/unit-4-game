@@ -30,25 +30,25 @@ function game() {
         $("#crystalOne").on("click", function () {
             score = score + crystalOne;
             console.log(score);
-            $("#score").html(score);
+            $("#score").html("Current Score: " +score + "Goal: " + goal);
         });
 
         $("#crystalTwo").on("click", function () {
             score = score + crystalTwo;
             console.log(score);
-            $("#score").html(score);
+            $("#score").html("Current Score: " +score + "Goal: " + goal);
         });
 
         $("#crystalThree").on("click", function () {
             score = score + crystalThree;
             console.log(score);
-            $("#score").html(score);
+            $("#score").html("Current Score: " +score + "Goal: " + goal);
         });
 
         $("#crystalFour").on("click", function () {
             score = score + crystalFour;
             console.log(score);
-            $("#score").html(score);
+            $("#score").html("Current Score: " +score + "Goal: " + goal);
         });
 
     };
@@ -63,7 +63,6 @@ function game() {
 
     if (score > round.goal) {
         losses++;
-
 
         alert("You lose!");
 
