@@ -20,3 +20,8 @@ p {
 #score {
     text-align: center;
 }
+
+.box {
+    height: 275px;
+    width: 275px;
+}

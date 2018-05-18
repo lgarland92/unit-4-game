@@ -10,7 +10,7 @@ function game() {
 
     function round() {
         //unsure if I should be using this function
-        function setScore(){
+        // function setScore(){
         var score = 0;
 
         var goal = Math.floor(Math.random() * 100) + 20;
@@ -27,7 +27,7 @@ function game() {
 
         var crystalFour = Math.floor(Math.random() * 12) + 1;
         console.log(crystalFour);
-        };
+        // };
 
         $("#crystalOne").on("click", function () {
             score = score + crystalOne;
@@ -64,16 +64,20 @@ function game() {
                 alert("You win!");
     
                 round();
-            };
+            }
     
-            if (score > goal) {
+            else if (score > goal) {
                 losses++;
     
                 alert("You lose!");
     
                 round();
     
-            };
+            }
+
+            else if (score < goal) {
+                alert ("Keep going!")
+            }
         };
 
         
