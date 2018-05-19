@@ -1,92 +1,92 @@
-function game() {
-
-    var wins = 0;
-    var losses = 0;
 
 
-    $("#wins").html("Wins:" + wins);
+var wins = 0;
+var losses = 0;
 
-    $("#losses").html("Losses:" + losses);
+function round() {
+    //unsure if I should be using this function
+    // function setScore(){
+    var score = 0;
 
-    function round() {
-        //unsure if I should be using this function
-        // function setScore(){
-        var score = 0;
+    var goal = Math.floor(Math.random() * 100) + 20;
+    console.log(goal);
 
-        var goal = Math.floor(Math.random() * 100) + 20;
-        console.log(goal);
+    var crystalOne = Math.floor(Math.random() * 12) + 1;
+    console.log(crystalOne);
 
-        var crystalOne = Math.floor(Math.random() * 12) + 1;
-        console.log(crystalOne);
+    var crystalTwo = Math.floor(Math.random() * 12) + 1;
+    console.log(crystalTwo);
 
-        var crystalTwo = Math.floor(Math.random() * 12) + 1;
-        console.log(crystalTwo);
+    var crystalThree = Math.floor(Math.random() * 12) + 1;
+    console.log(crystalThree);
 
-        var crystalThree = Math.floor(Math.random() * 12) + 1;
-        console.log(crystalThree);
+    var crystalFour = Math.floor(Math.random() * 12) + 1;
+    console.log(crystalFour);
+    // };
 
-        var crystalFour = Math.floor(Math.random() * 12) + 1;
-        console.log(crystalFour);
-        // };
+    $("#crystalOne").on("click", function () {
+        score = score + crystalOne;
+        console.log(score);
+        $("#score").html("Current Score: " + score + "Goal: " + goal);
+        check();
+    });
 
-        $("#crystalOne").on("click", function () {
-            score = score + crystalOne;
+    $("#crystalTwo").on("click", function () {
+        score = score + crystalTwo;
+        console.log(score);
+        $("#score").html("Current Score: " + score + "Goal: " + goal);
+        check();
+    });
+
+    $("#crystalThree").on("click", function () {
+        score = score + crystalThree;
+        console.log(score);
+        $("#score").html("Current Score: " + score + "Goal: " + goal);
+        check();
+    });
+
+    $("#crystalFour").on("click", function () {
+        score = score + crystalFour;
+        console.log(score);
+        $("#score").html("Current Score: " + score + "Goal: " + goal);
+        check();
+    });
+
+    function check() {
+        if (score === goal) {
+            wins++;
+
+            alert("You win!");
             console.log(score);
-            $("#score").html("Current Score: " + score + "Goal: " + goal);
-            check();
-        });
+            score= 0;
+            $("#wins").html("Wins:" + wins);
 
-        $("#crystalTwo").on("click", function () {
-            score = score + crystalTwo;
+            round();
+        }
+
+        else if (score > goal) {
+            losses++;
+
+            alert("You lose!");
+
             console.log(score);
-            $("#score").html("Current Score: " + score + "Goal: " + goal);
-            check();
-        });
+            score= 0;
 
-        $("#crystalThree").on("click", function () {
-            score = score + crystalThree;
-            console.log(score);
-            $("#score").html("Current Score: " + score + "Goal: " + goal);
-            check();
-        });
+            $("#losses").html("Losses:" + losses);
 
-        $("#crystalFour").on("click", function () {
-            score = score + crystalFour;
-            console.log(score);
-            $("#score").html("Current Score: " + score + "Goal: " + goal);
-            check();
-        });
+            round();
 
-        function check() {
-            if (score === goal) {
-                wins++;
-    
-                alert("You win!");
-    
-                round();
-            }
-    
-            else if (score > goal) {
-                losses++;
-    
-                alert("You lose!");
-    
-                round();
-    
-            }
+        }
 
-            else if (score < goal) {
-                alert ("Keep going!")
-            }
-        };
-
-        
-
+        else if (score < goal) {
+            console.log("Keep going!");
+        }
     };
 
-    
-    
-    round();
+
+
 };
 
-game();
+
+
+round();
